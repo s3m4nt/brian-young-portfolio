@@ -32,6 +32,16 @@ The question I wanted to answer: **how far can an AI collaborator go on a real f
 4. **Port to Next.js.** The prototype's structure became typed data (`src/data/`) plus small components with CSS Modules. Only the parts that need the browser (the lightbox, the project list state, copy-to-clipboard) are client components.
 5. **Polish.** Role lines, thumbnail sizing, spacing consistency across breakpoints, and a note on the Promo entry that the live sites have changed since the screenshots were taken.
 
+### Claude tools used
+
+The build touched several parts of Claude, not just a chat window:
+
+- **Claude (Cowork) as the working environment.** One long-running session handled the design iteration, the port, and the file work.
+- **Published Artifacts** for the prototype. The design lived as a hosted page that was republished after each round of changes, so I could review the real thing on desktop and phone instead of reading code.
+- **The built-in browser**, to look at the live Men's Wearhouse and Jos. A. Bank sites while choosing what to feature.
+- **Code execution in a sandbox**, to generate the composite thumbnail (image cropping and SVG layout) and to render screenshots at desktop, tablet and phone widths to check layouts and catch overflow.
+- **Direct access to my project folder**, to scaffold this repo alongside my old portfolio without touching it, and to apply later edits in place.
+
 ### What I took from it
 
 - Directing worked best in small, specific steps with a visual check after each one. "Make it better" is weak; "the text on the Jos. A. Bank image isn't centered" gets a fix.
@@ -68,9 +78,3 @@ public/images/  hero background, logo, project thumbnails
 
 Adding or editing a project is a data change in `src/data/projects.ts`
 (drop the image in `public/images/projects/` and reference it there).
-
-## TODO
-
-- Replace the Résumé `#` placeholder in `src/data/site.ts`.
-- Add real Open Graph image + `metadataBase` in `src/app/layout.tsx` once the domain is decided.
-- Deploy on Vercel.
