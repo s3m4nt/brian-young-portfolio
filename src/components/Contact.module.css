@@ -1,0 +1,36 @@
+.contact {
+  background: var(--accent2);
+  color: var(--ink);
+  padding: 55px 6vw 50px;
+}
+
+.inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.eyebrow {
+  font-size: 13px;
+  color: rgba(16, 16, 20, 0.6);
+  margin-bottom: 18px;
+}
+
+.links {
+  margin-top: 36px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 28px;
+  font-size: 13px;
+}
+
+.links a {
+  color: rgba(16, 16, 20, 0.65);
+  border-bottom: 1px solid transparent;
+  padding-bottom: 3px;
+  transition: color 0.2s, border-color 0.2s;
+}
+
+.links a:hover {
+  color: var(--ink);
+  border-color: var(--accent);
+}

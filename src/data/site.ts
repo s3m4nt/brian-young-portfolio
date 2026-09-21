@@ -1,0 +1,14 @@
+export const site = {
+  name: "Brian Young",
+  title: "Brian Young — Frontend Specialist",
+  description:
+    "Software Developer / Frontend Specialist with 10+ years building digital products, 6 years in enterprise e-commerce. React, Next.js, TypeScript.",
+  role: "Software Developer / Frontend Specialist with 10+ years building digital products, 6 years in enterprise e-commerce. React, Next.js, TypeScript, agentic AI-augmented workflows.",
+  email: "bdy-dev@proton.me",
+  phone: { label: "347-637-8670", href: "tel:+13476378670" },
+  links: {
+    github: "https://github.com/s3m4nt",
+    linkedin: "https://www.linkedin.com/in/brian-d-young/",
+    resume: "/resume/Brian_Young-FEWD-Resume.pdf",
+  },
+} as const;

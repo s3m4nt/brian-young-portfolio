@@ -1,0 +1,34 @@
+.button {
+  display: inline-flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 6px 14px;
+  font-family: var(--font-display), sans-serif;
+  font-weight: 700;
+  font-size: clamp(19px, 4vw, 37px);
+  color: var(--ink);
+  cursor: pointer;
+  background: none;
+  border: 1px solid rgba(16, 16, 20, 0.35);
+  border-radius: 14px;
+  padding: 18px 26px;
+  transition: color 0.25s, border-color 0.25s, background 0.25s;
+}
+
+.button:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+  background: rgba(46, 92, 255, 0.08);
+}
+
+.addr {
+  white-space: nowrap;
+}
+
+.hint {
+  white-space: nowrap;
+  font-family: var(--font-mono), monospace;
+  font-weight: 500;
+  font-size: 13px;
+  color: rgba(16, 16, 20, 0.6);
+}

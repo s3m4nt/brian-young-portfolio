@@ -1,0 +1,26 @@
+.work {
+  background: var(--ink);
+  padding: 90px 6vw 60px;
+}
+
+.head {
+  max-width: 1200px;
+  margin: 0 auto 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.head h2 {
+  font-family: var(--font-display), sans-serif;
+  font-weight: 700;
+  font-size: clamp(26px, 3.4vw, 38px);
+}
+
+.head p {
+  font-size: 13px;
+  color: var(--paper-dim);
+  max-width: 280px;
+}

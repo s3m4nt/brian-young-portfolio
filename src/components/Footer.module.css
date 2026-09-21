@@ -1,0 +1,7 @@
+.footer {
+  background: var(--ink);
+  color: var(--paper-dim);
+  text-align: left;
+  padding: 24px 6vw;
+  font-size: 13px;
+}

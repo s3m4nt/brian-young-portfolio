@@ -1,0 +1,175 @@
+.list {
+  list-style: none;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.proj {
+  border-top: 1px solid var(--line);
+}
+
+.proj:last-child {
+  border-bottom: 1px solid var(--line);
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 56px 1fr 180px 280px;
+  grid-template-areas: "idx text tags thumb";
+  align-items: center;
+  gap: 24px;
+  padding: 30px 0;
+  transition: padding-left 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.index {
+  grid-area: idx;
+  font-size: 13px;
+  color: var(--paper-dim);
+}
+
+.text {
+  grid-area: text;
+}
+
+.role {
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  color: var(--accent2);
+  margin-bottom: 6px;
+}
+
+.title {
+  font-family: var(--font-display), sans-serif;
+  font-weight: 700;
+  font-size: clamp(20px, 2.6vw, 28px);
+  transition: color 0.3s;
+}
+
+.sub {
+  font-size: 12px;
+  color: var(--paper-dim);
+  margin-top: 5px;
+}
+
+.note {
+  font-size: 11px;
+  color: rgba(237, 234, 224, 0.55);
+  margin-top: 10px;
+}
+
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 18px;
+  margin-top: 10px;
+  font-size: 12px;
+}
+
+.links a {
+  color: var(--accent2);
+  border-bottom: 1px solid rgba(243, 187, 45, 0.35);
+  padding-bottom: 2px;
+  transition: border-color 0.2s;
+}
+
+.links a:hover {
+  border-color: var(--accent2);
+}
+
+.tags {
+  grid-area: tags;
+  font-size: 12px;
+  color: rgba(237, 234, 224, 0.55);
+}
+
+.thumb {
+  grid-area: thumb;
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  padding: 0;
+  border: 0;
+  border-radius: 2px;
+  overflow: hidden;
+  background: transparent;
+  cursor: zoom-in;
+  -webkit-tap-highlight-color: transparent;
+  transform: scale(0.92);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.thumb:focus-visible {
+  transform: scale(1);
+}
+
+.thumbImg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Hover effects only where hover exists, so they don't stick after a tap. */
+@media (hover: hover) {
+  .row:hover {
+    padding-left: 12px;
+  }
+
+  .row:hover .title {
+    color: var(--accent2);
+  }
+
+  .row:hover .thumb {
+    transform: scale(1);
+  }
+}
+
+@media (max-width: 1100px) {
+  .row {
+    grid-template-columns: 48px 1fr 240px;
+    grid-template-areas:
+      "idx text thumb"
+      "idx tags thumb";
+    row-gap: 0;
+  }
+
+  .text {
+    align-self: end;
+  }
+
+  .tags {
+    align-self: start;
+    margin-top: 12px;
+  }
+}
+
+@media (max-width: 760px) {
+  .row {
+    grid-template-columns: 36px 1fr;
+    grid-template-areas:
+      "idx text"
+      ". tags"
+      ". thumb";
+    row-gap: 10px;
+    align-items: start;
+    padding: 24px 0;
+  }
+
+  .text,
+  .tags {
+    align-self: auto;
+  }
+
+  .tags {
+    line-height: 1.5;
+    margin-top: 0;
+  }
+
+  /* Thumbnails stay visible on mobile: they're the tap target for the lightbox. */
+  .thumb {
+    transform: none;
+    margin-top: 4px;
+  }
+}
