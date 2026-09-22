@@ -15,3 +15,6 @@ next-env.d.ts
 
 # vercel
 .vercel
+
+# lighthouse html dumps (regenerate locally; do not commit)
+*.report.html
