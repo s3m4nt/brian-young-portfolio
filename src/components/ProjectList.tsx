@@ -7,7 +7,7 @@ import { Lightbox } from "./Lightbox";
 import styles from "./ProjectList.module.css";
 
 export function ProjectList({ projects }: { projects: Project[] }) {
-  const [active, setActive] = useState<ProjectImage | null>(null);
+  const [active, setActive] = useState<ProjectImage[] | null>(null);
 
   return (
     <>
@@ -43,7 +43,9 @@ export function ProjectList({ projects }: { projects: Project[] }) {
               <button
                 type="button"
                 className={styles.thumb}
-                onClick={() => setActive(project.image)}
+                onClick={() =>
+                  setActive(project.lightboxImages ?? [project.image])
+                }
                 aria-label={`View larger image: ${project.title}`}
               >
                 <Image
@@ -61,7 +63,7 @@ export function ProjectList({ projects }: { projects: Project[] }) {
         ))}
       </ol>
 
-      <Lightbox image={active} onClose={() => setActive(null)} />
+      <Lightbox images={active} onClose={() => setActive(null)} />
     </>
   );
 }

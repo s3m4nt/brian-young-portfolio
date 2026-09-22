@@ -26,9 +26,20 @@ describe("projects data", () => {
 
   it("points at image files that exist in public/", () => {
     for (const project of projects) {
-      const file = join(publicDir, project.image.src.replace(/^\//, ""));
-      expect(existsSync(file), `missing ${project.image.src}`).toBe(true);
+      const files = [
+        project.image,
+        ...(project.lightboxImages ?? []),
+      ];
+      for (const image of files) {
+        const file = join(publicDir, image.src.replace(/^\//, ""));
+        expect(existsSync(file), `missing ${image.src}`).toBe(true);
+      }
     }
+  });
+
+  it("opens the promo pair as two lightbox images", () => {
+    const promo = projects.find((project) => project.id === "promo-system");
+    expect(promo?.lightboxImages).toHaveLength(2);
   });
 
   it("uses absolute https links when a project has live URLs", () => {

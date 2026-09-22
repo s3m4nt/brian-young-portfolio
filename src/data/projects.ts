@@ -3,6 +3,7 @@ export type ProjectImage = {
   width: number;
   height: number;
   alt: string;
+  caption?: string;
 };
 
 export type Project = {
@@ -15,6 +16,8 @@ export type Project = {
   /** Optional small note shown under the links. */
   note?: string;
   image: ProjectImage;
+  /** If set, the lightbox shows these instead of `image` (side by side). */
+  lightboxImages?: ProjectImage[];
   links?: { label: string; href: string }[];
 };
 
@@ -36,6 +39,22 @@ export const projects: Project[] = [
       height: 1350,
       alt: "Men's Wearhouse and Jos. A. Bank homepages side by side, with the promo strip and hero campaign labeled",
     },
+    lightboxImages: [
+      {
+        src: "/images/projects/promo-mw.jpg",
+        width: 1497,
+        height: 718,
+        alt: "Men's Wearhouse homepage with a labeled hero campaign, Made for the Whole Party",
+        caption: "Men's Wearhouse",
+      },
+      {
+        src: "/images/projects/promo-jos.jpg",
+        width: 1474,
+        height: 718,
+        alt: "Jos. A. Bank homepage with a labeled promo strip and Clearance Suits hero",
+        caption: "Jos. A. Bank",
+      },
+    ],
   },
   {
     id: "sloan",

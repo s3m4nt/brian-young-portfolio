@@ -34,6 +34,22 @@ const projects: Project[] = [
       height: 1350,
       alt: "Promo system screenshot",
     },
+    lightboxImages: [
+      {
+        src: "/images/projects/promo-mw.jpg",
+        width: 1497,
+        height: 718,
+        alt: "Men's Wearhouse homepage",
+        caption: "Men's Wearhouse",
+      },
+      {
+        src: "/images/projects/promo-jos.jpg",
+        width: 1474,
+        height: 718,
+        alt: "Jos. A. Bank homepage",
+        caption: "Jos. A. Bank",
+      },
+    ],
   },
 ];
 
@@ -64,5 +80,21 @@ describe("ProjectList", () => {
 
     expect(screen.getByAltText("Sloan website screenshot")).toBeInTheDocument();
     expect(screen.getByRole("dialog", { hidden: true })).toHaveAttribute("open");
+  });
+
+  it("opens the promo work as two side-by-side screenshots", async () => {
+    const user = userEvent.setup();
+    render(<ProjectList projects={projects} />);
+
+    await user.click(
+      screen.getByRole("button", {
+        name: "View larger image: Promo & Merchandising System",
+      }),
+    );
+
+    expect(screen.getByAltText("Men's Wearhouse homepage")).toBeInTheDocument();
+    expect(screen.getByAltText("Jos. A. Bank homepage")).toBeInTheDocument();
+    expect(screen.getByText("Men's Wearhouse")).toBeInTheDocument();
+    expect(screen.getByText("Jos. A. Bank")).toBeInTheDocument();
   });
 });

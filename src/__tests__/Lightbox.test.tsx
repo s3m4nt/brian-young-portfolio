@@ -12,7 +12,7 @@ const image = {
 
 describe("Lightbox", () => {
   it("does not show the image until one is selected", () => {
-    render(<Lightbox image={null} onClose={() => {}} />);
+    render(<Lightbox images={null} onClose={() => {}} />);
     expect(screen.queryByAltText(image.alt)).not.toBeInTheDocument();
   });
 
@@ -20,7 +20,7 @@ describe("Lightbox", () => {
     const onClose = vi.fn();
     const user = userEvent.setup();
 
-    render(<Lightbox image={image} onClose={onClose} />);
+    render(<Lightbox images={[image]} onClose={onClose} />);
 
     const dialog = screen.getByRole("dialog", { hidden: true });
     expect(dialog).toHaveAttribute("open");
@@ -29,5 +29,27 @@ describe("Lightbox", () => {
 
     await user.click(screen.getByRole("button", { name: "Close" }));
     expect(onClose).toHaveBeenCalled();
+  });
+
+  it("shows multiple images side by side with captions", () => {
+    render(
+      <Lightbox
+        images={[
+          { ...image, caption: "Men's Wearhouse" },
+          {
+            src: "/images/projects/promo-jos.jpg",
+            width: 1474,
+            height: 718,
+            alt: "Jos. A. Bank homepage",
+            caption: "Jos. A. Bank",
+          },
+        ]}
+        onClose={() => {}}
+      />,
+    );
+
+    expect(screen.getByText("Men's Wearhouse")).toBeInTheDocument();
+    expect(screen.getByText("Jos. A. Bank")).toBeInTheDocument();
+    expect(screen.getByAltText("Jos. A. Bank homepage")).toBeInTheDocument();
   });
 });
