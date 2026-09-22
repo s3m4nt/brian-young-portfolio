@@ -1,6 +1,10 @@
 import { render, screen } from "@testing-library/react";
-import { describe, expect, it } from "vitest";
+import { describe, expect, it, vi } from "vitest";
 import Home from "@/app/page";
+
+vi.mock("@/components/Footer", () => ({
+  Footer: () => <footer>© 2026 Brian Young</footer>,
+}));
 
 describe("Home page", () => {
   it("renders the main sections and contact paths", () => {

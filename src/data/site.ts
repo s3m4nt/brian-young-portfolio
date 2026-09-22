@@ -1,6 +1,6 @@
 export const site = {
   name: "Brian Young",
-  title: "Brian Young — Frontend Specialist",
+  title: "Brian Young — Software Developer / Frontend Specialist",
   description:
     "Software Developer / Frontend Specialist with 10+ years building digital products, 6 years in enterprise e-commerce. React, Next.js, TypeScript.",
   role: "Software Developer / Frontend Specialist with 10+ years building digital products, 6 years in enterprise e-commerce. React, Next.js, TypeScript, agentic AI-augmented workflows.",

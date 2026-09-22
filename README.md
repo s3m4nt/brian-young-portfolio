@@ -32,6 +32,7 @@ The question I wanted to answer: **how far can an AI collaborator go on a real f
 4. **Port to Next.js.** The prototype's structure became typed data (`src/data/`) plus small components with CSS Modules. Only the parts that need the browser (the lightbox, the project list state, copy-to-clipboard) are client components.
 5. **Polish.** Role lines, thumbnail sizing, spacing consistency across breakpoints, and a note on the Promo entry that the live sites have changed since the screenshots were taken.
 6. **Tests and accessibility.** Vitest specs for the data, the lightbox, copy-to-clipboard, and the home page. Lighthouse (axe-core) against the running site; muted type on the gold band was darkened so those labels meet WCAG AA contrast.
+7. **Live weather in the footer.** A small Open-Meteo fetch on the server (no API key, revalidate every 30 minutes) maps WMO weather codes to an icon and shows Malibu in °F after the copyright. If the request fails, the copyright still renders and the weather line is omitted.
 
 ### Claude tools used
 
@@ -74,6 +75,7 @@ Specs live in `src/__tests__/` (Vitest, jsdom, Testing Library). They cover the 
 - **Data.** Project ids are unique; titles, roles, tags, and image metadata are present; thumbnail files and the résumé PDF exist on disk; live project links are `https`.
 - **Copy email.** Click copies the address and shows `copied!`; a clipboard failure shows `copy failed`.
 - **Selected work.** The list renders roles, tags, and optional links; a thumbnail opens the lightbox `<dialog>`.
+- **Footer weather.** A successful forecast shows an icon and temperature with a `Malibu, CA` title; a failed request leaves the copyright and hides the weather.
 - **Home page.** Hero, About, Work, and Contact are present, with GitHub, LinkedIn, and résumé hrefs.
 
 jsdom cannot fully prove native `<dialog>` keyboard behavior (Escape to close, focus returning to the thumbnail). That is a Chrome check, not a unit test.
@@ -86,6 +88,14 @@ The only automated fail on the first pass was contrast on the gold About/Contact
 
 Lighthouse does not score keyboard flow. The lightbox still relies on native `<dialog>` for focus trapping, Escape, and returning focus to the thumbnail.
 
+## Live weather
+
+The footer is an async Server Component. It asks [Open-Meteo](https://open-meteo.com/) for Malibu (`34.0259, -118.7798`) — same coordinates as a prior Next.js project of mine — and caches the response for 30 minutes (`fetch` + `next: { revalidate: 1800 }`).
+
+WMO `weather_code` values map to a short icon set (clear, partly cloudy, overcast, rain, snow, showers, thunder). Temperature is rounded °F. There is no client JavaScript and no API key. A failed or non-OK response is swallowed so the page never depends on a third party to ship.
+
+That is the kind of detail I care about on production frontends: a small live data path, explicit caching, and a defined empty state.
+
 ## Stack
 
 - Next.js 15 (App Router), React 19, TypeScript
@@ -94,6 +104,7 @@ Lighthouse does not score keyboard flow. The lightbox still relies on native `<d
 - Lighthouse / axe-core for accessibility (WCAG AA contrast on the gold band)
 - `next/font/google`: Space Grotesk (display) and IBM Plex Mono (annotations and metadata)
 - `next/image` for thumbnails; native `<dialog>` for the lightbox (Esc to close, focus returns to the thumbnail)
+- Open-Meteo (server `fetch`, 30-minute revalidate) for the footer weather icon
 
 ## Structure
 
@@ -101,9 +112,10 @@ Lighthouse does not score keyboard flow. The lightbox still relies on native `<d
 src/
   app/          layout (next/font, metadata), page, globals.css
   components/   Hero, About, Work, ProjectList, Lightbox, Contact, CopyEmail, Footer
-                (each with a CSS Module; only Lightbox, ProjectList and CopyEmail are client components)
+                (CSS Modules; Lightbox, ProjectList and CopyEmail are client components.
+                 Footer is an async Server Component: Open-Meteo weather after the copyright)
   data/         site.ts (name, email, links)  ·  projects.ts (the Selected work entries)
-  __tests__/    Vitest specs: project/site data, CopyEmail, Lightbox, ProjectList, home page
+  __tests__/    Vitest specs: project/site data, CopyEmail, Lightbox, ProjectList, Footer, home page
 public/images/  hero background, logo, project thumbnails
 public/resume/  PDF résumé
 ```
