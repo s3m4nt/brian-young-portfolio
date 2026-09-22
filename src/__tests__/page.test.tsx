@@ -30,5 +30,7 @@ describe("Home page", () => {
       "href",
       "/resume/Brian_Young-FEWD-Resume.pdf",
     );
+    expect(screen.getByText("347-637-8670")).toBeInTheDocument();
+    expect(screen.queryByRole("link", { name: "347-637-8670" })).not.toBeInTheDocument();
   });
 });

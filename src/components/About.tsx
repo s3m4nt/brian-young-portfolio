@@ -18,7 +18,7 @@ const stack = [
   {
     label: "Platforms & Tools",
     value:
-      "HCL Commerce, Contentstack CMS, Google Cloud Platform (GCP), Git, Postman, Jira, Figma, Searchlight",
+      "HCL Commerce, Contentstack CMS, Google Cloud Platform (GCP), Git, Postman, Jira, Figma, Adobe Creative Cloud, Searchlight",
   },
   {
     label: "Engineering Practices",
@@ -48,10 +48,11 @@ export function About() {
             on a national retail platform.
           </p>
           <p>
-            These days that means React and Next.js by day, and an increasingly
-            AI-augmented workflow — Cursor, agentic tooling, MCP integrations —
-            built to move fast without cutting corners on accessibility,
-            performance, or the version of a UI that actually ships.
+            These days that means React and Next.js in production, alongside an
+            increasingly AI-augmented workflow — Cursor, agentic tooling, MCP
+            integrations — built to move fast without cutting corners on
+            accessibility, performance, or the version of a UI that actually
+            ships.
           </p>
           <p>
             That design instinct shows up beyond the code, too — logo and visual

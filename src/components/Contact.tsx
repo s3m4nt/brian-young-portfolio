@@ -15,7 +15,7 @@ export function Contact() {
           <a href={site.links.linkedin} target="_blank" rel="noopener noreferrer">
             LinkedIn
           </a>
-          <a href={site.phone.href}>{site.phone.label}</a>
+          <span>{site.phone}</span>
         </div>
       </div>
     </section>

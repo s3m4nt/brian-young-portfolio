@@ -42,6 +42,17 @@ describe("projects data", () => {
     expect(promo?.lightboxImages).toHaveLength(2);
   });
 
+  it("uses larger screenshots in the lightbox for the band sites", () => {
+    for (const id of ["sloan", "jamc", "ivy", "fow"]) {
+      const project = projects.find((entry) => entry.id === id);
+      const full = project?.lightboxImages?.[0];
+      expect(full, `${id} is missing a lightbox image`).toBeDefined();
+      expect(full?.src).toMatch(/-full\.jpg$/);
+      expect(full?.width ?? 0).toBeGreaterThan(project?.image.width ?? 0);
+      expect(full?.height ?? 0).toBeGreaterThan(project?.image.height ?? 0);
+    }
+  });
+
   it("uses absolute https links when a project has live URLs", () => {
     for (const project of projects) {
       for (const link of project.links ?? []) {

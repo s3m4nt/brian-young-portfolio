@@ -24,7 +24,7 @@ export type Project = {
 export const projects: Project[] = [
   {
     id: "promo-system",
-    title: "Promo & Merchandising System",
+    title: "Promo & marketing",
     role: "Frontend development · Tailored Brands",
     subtitle: "Dynamic homepage campaigns · Men's Wearhouse & Jos. A. Bank",
     tags: "React, Next.js, TypeScript, JavaScript, Node.js, SCSS",
@@ -69,6 +69,14 @@ export const projects: Project[] = [
       height: 407,
       alt: "Sloan website screenshot",
     },
+    lightboxImages: [
+      {
+        src: "/images/projects/sloan-full.jpg",
+        width: 1399,
+        height: 793,
+        alt: "Sloan discography page screenshot",
+      },
+    ],
   },
   {
     id: "jamc",
@@ -84,6 +92,14 @@ export const projects: Project[] = [
       height: 407,
       alt: "The Jesus and Mary Chain website screenshot",
     },
+    lightboxImages: [
+      {
+        src: "/images/projects/jamc-full.jpg",
+        width: 1399,
+        height: 793,
+        alt: "The Jesus and Mary Chain homepage screenshot",
+      },
+    ],
   },
   {
     id: "ivy",
@@ -98,6 +114,14 @@ export const projects: Project[] = [
       height: 407,
       alt: "Ivy website screenshot",
     },
+    lightboxImages: [
+      {
+        src: "/images/projects/ivy-full.jpg",
+        width: 1399,
+        height: 761,
+        alt: "Ivy All Hours page screenshot",
+      },
+    ],
   },
   {
     id: "fow",
@@ -112,5 +136,13 @@ export const projects: Project[] = [
       height: 407,
       alt: "Fountains of Wayne website screenshot",
     },
+    lightboxImages: [
+      {
+        src: "/images/projects/fow-full.jpg",
+        width: 1399,
+        height: 786,
+        alt: "Fountains of Wayne homepage screenshot",
+      },
+    ],
   },
 ];

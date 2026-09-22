@@ -115,6 +115,10 @@
   object-fit: cover;
 }
 
+.thumbBright {
+  filter: brightness(150%); /* Increases brightness by 50% */
+}
+
 /* Hover effects only where hover exists, so they don't stick after a tap. */
 @media (hover: hover) {
   .row:hover {

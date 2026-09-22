@@ -34,3 +34,7 @@
   color: var(--ink);
   border-color: var(--accent);
 }
+
+.links span {
+  color: rgba(16, 16, 20, 0.65);
+}

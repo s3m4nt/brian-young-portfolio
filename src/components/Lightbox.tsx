@@ -72,7 +72,7 @@ export function Lightbox({ images, onClose }: Props) {
                 alt={image.alt}
                 width={image.width}
                 height={image.height}
-                sizes={pair ? "(max-width: 760px) 92vw, 46vw" : "90vw"}
+                sizes={pair ? "(max-width: 760px) 96vw, 48vw" : "85vw"}
                 quality={90}
               />
             </figure>

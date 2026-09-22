@@ -49,7 +49,9 @@ export function ProjectList({ projects }: { projects: Project[] }) {
                 aria-label={`View larger image: ${project.title}`}
               >
                 <Image
-                  className={styles.thumbImg}
+                  className={`${styles.thumbImg}${
+                    i > 0 && i < projects.length - 1 ? ` ${styles.thumbBright}` : ""
+                  }`}
                   src={project.image.src}
                   alt=""
                   width={project.image.width}

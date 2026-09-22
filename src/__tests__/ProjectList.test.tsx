@@ -20,7 +20,7 @@ const projects: Project[] = [
   },
   {
     id: "promo",
-    title: "Promo & Merchandising System",
+    title: "Promo & marketing",
     role: "Frontend development",
     subtitle: "Dynamic homepage campaigns",
     tags: "React, Next.js",
@@ -58,7 +58,7 @@ describe("ProjectList", () => {
     render(<ProjectList projects={projects} />);
 
     expect(screen.getByText("Sloan — official site")).toBeInTheDocument();
-    expect(screen.getByText("Promo & Merchandising System")).toBeInTheDocument();
+    expect(screen.getByText("Promo & marketing")).toBeInTheDocument();
     expect(screen.getByRole("link", { name: /menswearhouse\.com/ })).toHaveAttribute(
       "href",
       "https://www.menswearhouse.com",
@@ -88,7 +88,7 @@ describe("ProjectList", () => {
 
     await user.click(
       screen.getByRole("button", {
-        name: "View larger image: Promo & Merchandising System",
+        name: "View larger image: Promo & marketing",
       }),
     );
 
