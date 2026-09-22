@@ -41,8 +41,8 @@ export const projects: Project[] = [
     id: "sloan",
     title: "Sloan — official site",
     role: "Design, development & site management",
-    subtitle:
-      "Custom typography & e-commerce · Next.js rebuild · site since redesigned",
+    subtitle: "Custom typography & e-commerce · Next.js rebuild",
+    note: "Site since redesigned.",
     tags: "Next.js, Tailwind CSS, JavaScript, SCSS",
     image: {
       src: "/images/projects/sloan.jpg",
@@ -56,7 +56,8 @@ export const projects: Project[] = [
     title: "The Jesus and Mary Chain — official site",
     role: "Design, development & site management",
     subtitle:
-      "Worldwide marketing hub & retail presence · Next.js rebuild · site since redesigned",
+      "Worldwide marketing hub & retail presence · Next.js rebuild",
+    note: "Site since redesigned.",
     tags: "Next.js, Tailwind CSS, JavaScript, SCSS",
     image: {
       src: "/images/projects/jamc.jpg",
@@ -69,8 +70,8 @@ export const projects: Project[] = [
     id: "ivy",
     title: "Ivy — music sync portfolio site",
     role: "Design, development & site management",
-    subtitle:
-      "Placement portfolio for supervisors & agencies · site since redesigned",
+    subtitle: "Placement portfolio for supervisors & agencies",
+    note: "Site since redesigned.",
     tags: "WordPress, JavaScript, CSS",
     image: {
       src: "/images/projects/ivy.jpg",
@@ -83,8 +84,8 @@ export const projects: Project[] = [
     id: "fow",
     title: "Fountains of Wayne — official site",
     role: "Design, development & site management",
-    subtitle:
-      "Consolidated media, store & social into one hub · site since redesigned",
+    subtitle: "Consolidated media, store & social into one hub",
+    note: "Site since redesigned.",
     tags: "PHP, jQuery, Vanilla JavaScript, CSS",
     image: {
       src: "/images/projects/fow.jpg",

@@ -53,8 +53,12 @@
 }
 
 .note {
-  font-size: 11px;
-  color: rgba(237, 234, 224, 0.55);
+  font-size: 12px;
+  color: rgba(237, 234, 224, 0.82);
+  margin-top: 5px;
+}
+
+.links + .note {
   margin-top: 10px;
 }
 
