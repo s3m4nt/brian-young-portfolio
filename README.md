@@ -69,6 +69,8 @@ Always score Lighthouse against a production build. `next dev` compiles on reque
 npm run lighthouse -- --only-categories=accessibility
 ```
 
+Each production build stamps the time into View Source as `<meta name="prod-build">` and `data-prod-build` on `<body>` (Pacific time). `next dev` shows `dev`.
+
 ## Unlisted
 
 This site is **not meant to rank**. `layout.tsx` sends `noindex, nofollow`, and `robots.ts` disallows `/`, so it only reaches people who have the URL.

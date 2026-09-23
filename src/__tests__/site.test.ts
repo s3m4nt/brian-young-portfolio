@@ -23,6 +23,12 @@ describe("site data", () => {
     });
   });
 
+  it("stamps a production build time into the document", () => {
+    const layout = readFileSync(join(__dirname, "../app/layout.tsx"), "utf8");
+    expect(layout).toMatch(/prod-build/);
+    expect(layout).toMatch(/NEXT_PUBLIC_PROD_BUILD/);
+  });
+
   it("points at a résumé file that exists", () => {
     const file = join(
       __dirname,
