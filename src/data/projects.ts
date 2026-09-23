@@ -26,8 +26,8 @@ export const projects: Project[] = [
     id: "promo-system",
     title: "Promo & marketing",
     role: "Frontend development · Tailored Brands",
-    subtitle: "Dynamic homepage campaigns · Men's Wearhouse & Jos. A. Bank",
-    tags: "React, Next.js, TypeScript, JavaScript, Node.js, SCSS",
+    subtitle: "Dynamic homepage campaigns · Men\u2019s Wearhouse & Jos. A. Bank",
+    tags: "React, Next.js, TypeScript, JavaScript, Node.js, SCSS, Pug templating & mixins, Design Tokens & Internal Design Systems",
     note: "Screenshots are from my time on the team. The live sites have since changed.",
     links: [
       { label: "menswearhouse.com", href: "https://www.menswearhouse.com" },
@@ -37,15 +37,15 @@ export const projects: Project[] = [
       src: "/images/projects/promo-system.jpg",
       width: 2400,
       height: 1350,
-      alt: "Men's Wearhouse and Jos. A. Bank homepages side by side, with the promo strip and hero campaign labeled",
+      alt: "Men\u2019s Wearhouse and Jos. A. Bank homepages side by side, with the promo strip and hero campaign labeled",
     },
     lightboxImages: [
       {
         src: "/images/projects/promo-mw.jpg",
         width: 1497,
         height: 718,
-        alt: "Men's Wearhouse homepage with a labeled hero campaign, Made for the Whole Party",
-        caption: "Men's Wearhouse",
+        alt: "Men\u2019s Wearhouse homepage with a labeled hero campaign, Made for the Whole Party",
+        caption: "Men\u2019s Wearhouse",
       },
       {
         src: "/images/projects/promo-jos.jpg",

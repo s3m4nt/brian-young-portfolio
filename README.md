@@ -55,18 +55,25 @@ The build touched several parts of Claude, not just a chat window:
 
 ```bash
 npm install
-npm run dev        # http://localhost:3000
-npm run build      # production build
+npm run dev          # http://localhost:3000 — local work only
+npm run build        # production build
 npm run typecheck
-npm run test       # Vitest + Testing Library
+npm run test         # Vitest + Testing Library
 npm run test:watch
+npm run lighthouse   # production build on :3001, then Lighthouse
 ```
 
-With the dev server running, an accessibility pass (Lighthouse, which uses axe-core):
+Always score Lighthouse against a production build. `next dev` compiles on request and ships unminified JS, so Performance lands around **40** even when the same page is in the **90s** after `next build`. `npm run lighthouse` builds, serves `:3001` (so it does not collide with `next dev` on `:3000`), then opens the report. Extra flags pass through:
 
 ```bash
-npx lighthouse http://localhost:3000 --only-categories=accessibility --view
+npm run lighthouse -- --only-categories=accessibility
 ```
+
+## Unlisted
+
+This site is **not meant to rank**. `layout.tsx` sends `noindex, nofollow`, and `robots.ts` disallows `/`, so it only reaches people who have the URL.
+
+Lighthouse SEO assumes you want Google to list the page, so **Page is blocked from indexing** will fail and the SEO category will sit around **50–60**. That fail is the setting working, not a bug. Do not remove `noindex` to chase a 100. Performance, Accessibility, and Best Practices are the scores that matter here.
 
 ## Tests
 
@@ -82,7 +89,7 @@ jsdom cannot fully prove native `<dialog>` keyboard behavior (Escape to close, f
 
 ## Accessibility
 
-Automated checks are Lighthouse's Accessibility category (axe-core) on `http://localhost:3000`. The page is aimed at **WCAG AA**.
+Automated checks are Lighthouse's Accessibility category (axe-core) on a **production** build (`npm run lighthouse -- --only-categories=accessibility`). The page is aimed at **WCAG AA**.
 
 The only automated fail on the first pass was contrast on the gold About/Contact band: 13px muted labels at 60% ink on `#f3bb2d` were **4.1:1** (AA needs **4.5:1**). Those labels — About, Get in touch, click to copy — now use 75% ink. Re-run the Lighthouse command above after visual changes.
 

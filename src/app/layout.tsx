@@ -25,6 +25,7 @@ export const metadata: Metadata = {
     description: site.description,
     type: "website",
   },
+  // Unlisted on purpose: people get a link, search engines do not.
   robots: {
     index: false,
     follow: false,

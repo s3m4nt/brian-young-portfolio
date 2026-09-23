@@ -39,8 +39,8 @@ const projects: Project[] = [
         src: "/images/projects/promo-mw.jpg",
         width: 1497,
         height: 718,
-        alt: "Men's Wearhouse homepage",
-        caption: "Men's Wearhouse",
+        alt: "Men\u2019s Wearhouse homepage",
+        caption: "Men\u2019s Wearhouse",
       },
       {
         src: "/images/projects/promo-jos.jpg",
@@ -92,9 +92,9 @@ describe("ProjectList", () => {
       }),
     );
 
-    expect(screen.getByAltText("Men's Wearhouse homepage")).toBeInTheDocument();
+    expect(screen.getByAltText("Men\u2019s Wearhouse homepage")).toBeInTheDocument();
     expect(screen.getByAltText("Jos. A. Bank homepage")).toBeInTheDocument();
-    expect(screen.getByText("Men's Wearhouse")).toBeInTheDocument();
+    expect(screen.getByText("Men\u2019s Wearhouse")).toBeInTheDocument();
     expect(screen.getByText("Jos. A. Bank")).toBeInTheDocument();
   });
 });

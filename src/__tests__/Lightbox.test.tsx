@@ -35,7 +35,7 @@ describe("Lightbox", () => {
     render(
       <Lightbox
         images={[
-          { ...image, caption: "Men's Wearhouse" },
+          { ...image, caption: "Men\u2019s Wearhouse" },
           {
             src: "/images/projects/promo-jos.jpg",
             width: 1474,
@@ -48,7 +48,7 @@ describe("Lightbox", () => {
       />,
     );
 
-    expect(screen.getByText("Men's Wearhouse")).toBeInTheDocument();
+    expect(screen.getByText("Men\u2019s Wearhouse")).toBeInTheDocument();
     expect(screen.getByText("Jos. A. Bank")).toBeInTheDocument();
     expect(screen.getByAltText("Jos. A. Bank homepage")).toBeInTheDocument();
   });

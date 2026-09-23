@@ -4,12 +4,12 @@ const stack = [
   {
     label: "Frontend & Development",
     value:
-      "React, Next.js, TypeScript/TSX, JavaScript, Node.js, HTML5, CSS3, SCSS",
+      "React, Next.js, TypeScript/TSX, JavaScript, Node.js, Pug Templates & Mixins, HTML, CSS, SCSS, Tailwind CSS, Design Tokens & Internal Design Systems",
   },
   {
     label: "AI Development Workflows",
     value:
-      "Cursor, agentic workflows, MCP integrations, AI-assisted implementation, design-to-code workflows",
+      "Claude Design, Claude Code, Cursor, agentic workflows, MCP integrations, AI-assisted implementation, design-to-code workflows",
   },
   {
     label: "Design",
@@ -43,9 +43,9 @@ export function About() {
           </h2>
           <p>
             Same instinct for timing and detail, aimed at a different medium.
-            That crossover led to Seattle startups, then six years inside
-            enterprise e-commerce — most recently leading frontend engineering
-            on a national retail platform.
+            That crossover led to Seattle startups, then six years building 
+            enterprise e-commerce experiences at Tailored Brands for 
+            Men&#x2019;s Wearhouse and Jos. A. Bank.
           </p>
           <p>
             These days that means React and Next.js in production, alongside an
