@@ -105,6 +105,10 @@ WMO `weather_code` values map to a short icon set (clear, partly cloudy, overcas
 
 That is the kind of detail I care about on production frontends: a small live data path, explicit caching, and a defined empty state.
 
+## Analytics
+
+[Vercel Web Analytics](https://vercel.com/docs/analytics) is wired in the root layout (`@vercel/analytics/next`). Page views are first-party and privacy-friendly — no cookies, no Google tag. It only sends data on a production deploy; `next dev` is silent. Enable it on the Vercel project (Analytics → Enable) or the dashboard stays empty.
+
 ## Stack
 
 - Next.js 15 (App Router), React 19, TypeScript
@@ -114,12 +118,13 @@ That is the kind of detail I care about on production frontends: a small live da
 - `next/font/google`: Space Grotesk (display) and IBM Plex Mono (annotations and metadata)
 - `next/image` for thumbnails; native `<dialog>` for the lightbox (Esc to close, focus returns to the thumbnail)
 - Open-Meteo (server `fetch`, 30-minute revalidate) for the footer weather icon
+- Vercel Web Analytics (`<Analytics />` in the root layout; production deploys only)
 
 ## Structure
 
 ```
 src/
-  app/          layout (next/font, metadata), page, globals.css
+  app/          layout (next/font, metadata, Vercel Analytics), page, globals.css
   components/   Hero, About, Work, ProjectList, Lightbox, Contact, CopyEmail, Footer
                 (CSS Modules; Lightbox, ProjectList and CopyEmail are client components.
                  Footer is an async Server Component: Open-Meteo weather after the copyright)
