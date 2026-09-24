@@ -63,7 +63,13 @@ npm run test:watch
 npm run lighthouse   # production build on :3001, then Lighthouse
 ```
 
-Always score Lighthouse against a production build. `next dev` compiles on request and ships unminified JS, so Performance lands around **40** even when the same page is in the **90s** after `next build`. `npm run lighthouse` builds, serves `:3001` (so it does not collide with `next dev` on `:3000`), then opens the report. Extra flags pass through:
+With the site already running on `:3000`:
+
+```bash
+npx lighthouse http://localhost:3000 --view
+```
+
+That opens the HTML report in Chrome. Always treat Performance as a **production** number. `next dev` compiles on request and ships unminified JS, so that category lands around **40** even when the same page is in the **90s** after `next build`. `npm run lighthouse` builds, serves `:3001` (so it does not collide with `next dev` on `:3000`), then opens the report. Extra flags pass through:
 
 ```bash
 npm run lighthouse -- --only-categories=accessibility
