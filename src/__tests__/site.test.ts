@@ -11,7 +11,7 @@ describe("site data", () => {
     expect(site.phone).toMatch(/^\d{3}-\d{3}-\d{4}$/);
     expect(site.links.github).toMatch(/^https:\/\/github\.com\//);
     expect(site.links.linkedin).toMatch(/^https:\/\/www\.linkedin\.com\//);
-    expect(site.links.resume).toBe("/resume/Brian_Young-FEWD-Resume.pdf");
+    expect(site.links.resume).toBe("/resume/Brian_Young_FEWD_Resume.pdf");
   });
 
   it("asks search engines not to index the site", () => {

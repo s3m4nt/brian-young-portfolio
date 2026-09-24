@@ -9,6 +9,6 @@ export const site = {
   links: {
     github: "https://github.com/s3m4nt",
     linkedin: "https://www.linkedin.com/in/brian-d-young/",
-    resume: "/resume/Brian_Young-FEWD-Resume.pdf",
+    resume: "/resume/Brian_Young_FEWD_Resume.pdf",
   },
 } as const;
