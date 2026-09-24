@@ -9,10 +9,18 @@
   background: var(--ink);
 }
 
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(90deg, rgba(10,10,12,.55), rgba(10,10,12,.1) 60%);
+}
+
 .bg {
   z-index: -2;
   object-fit: cover;
-  object-position: center 38%;
+  object-position: 55% 38%;
 }
 
 .overlay {
