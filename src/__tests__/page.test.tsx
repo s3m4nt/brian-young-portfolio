@@ -19,7 +19,7 @@ describe("Home page", () => {
 
     expect(
       screen.getAllByRole("link", { name: "GitHub" })[0],
-    ).toHaveAttribute("href", "https://github.com/s3m4nt");
+    ).toHaveAttribute("href", "https://github.com/s3m4nt/brian-young-portfolio");
     expect(
       screen.getAllByRole("link", { name: "LinkedIn" })[0],
     ).toHaveAttribute(

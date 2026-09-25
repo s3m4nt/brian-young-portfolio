@@ -7,7 +7,7 @@ export const site = {
   email: "bdy-dev@proton.me",
   phone: "347-637-8670",
   links: {
-    github: "https://github.com/s3m4nt",
+    github: "https://github.com/s3m4nt/brian-young-portfolio",
     linkedin: "https://www.linkedin.com/in/brian-d-young/",
     resume: "/resume/Brian_Young_FEWD_Resume.pdf",
   },
