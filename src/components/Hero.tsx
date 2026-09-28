@@ -6,7 +6,7 @@ export function Hero() {
   return (
     <header className={styles.hero}>
       <Image
-        src="/images/hero-2700-soft.webp"
+        src="/images/hero-2700-esrgan.webp"
         alt=""
         fill
         priority
