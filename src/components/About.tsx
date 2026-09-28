@@ -38,14 +38,15 @@ export function About() {
         <div>
           <div className={styles.eyebrow}>About</div>
           <h2>
-            Before frontend, I was mixing tracks and building sites for touring
-            bands.
+            Before enterprise e-commerce, I was mixing tracks and building sites
+            for touring bands.
           </h2>
           <p>
             Same instinct for timing and detail, aimed at a different medium.
-            That crossover led to Seattle startups, then six years building 
-            enterprise e-commerce experiences at Tailored Brands for 
-            Men&#x2019;s Wearhouse and Jos. A. Bank.
+            That crossover led to a Seattle startup, then freelance design and
+            development, then six years building enterprise e-commerce
+            experiences at Tailored Brands for Men&#x2019;s Wearhouse and Jos. A.
+            Bank.
           </p>
           <p>
             These days that means React and Next.js in production, alongside an

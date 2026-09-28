@@ -13,7 +13,7 @@ describe("Home page", () => {
     expect(
       screen.getByRole("heading", { name: /BrianYoung/i }),
     ).toBeInTheDocument();
-    expect(screen.getByRole("heading", { name: /Before frontend/i })).toBeInTheDocument();
+    expect(screen.getByRole("heading", { name: /Before enterprise e-commerce/i })).toBeInTheDocument();
     expect(screen.getByRole("heading", { name: "Selected work" })).toBeInTheDocument();
     expect(screen.getByText("Get in touch")).toBeInTheDocument();
 
