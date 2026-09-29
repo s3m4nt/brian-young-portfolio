@@ -87,11 +87,11 @@ Lighthouse SEO assumes you want Google to list the page, so **Page is blocked fr
 
 Specs live in `src/__tests__/` (Vitest, jsdom, Testing Library). They cover the parts that would actually break a recruiter's pass over the page:
 
-- **Data.** Project ids are unique; titles, roles, tags, and image metadata are present; thumbnail files and the résumé PDF exist on disk; live project links are `https`.
+- **Data.** Project ids are unique; titles, roles, tags, and image metadata are present; thumbnail files and the resume PDF exist on disk; live project links are `https`.
 - **Copy email.** Click copies the address and shows `copied!`; a clipboard failure shows `copy failed`.
 - **Selected work.** The list renders roles, tags, and optional links; a thumbnail opens the lightbox `<dialog>`.
 - **Footer weather.** A successful forecast shows an icon and temperature with a `Malibu, CA` title; a failed request leaves the copyright and hides the weather.
-- **Home page.** Hero, About, Work, and Contact are present, with GitHub, LinkedIn, and résumé hrefs.
+- **Home page.** Hero, About, Work, and Contact are present, with GitHub, LinkedIn, and resume hrefs.
 
 jsdom cannot fully prove native `<dialog>` keyboard behavior (Escape to close, focus returning to the thumbnail). That is a Chrome check, not a unit test.
 
@@ -137,7 +137,7 @@ src/
   data/         site.ts (name, email, links)  ·  projects.ts (the Selected work entries)
   __tests__/    Vitest specs: project/site data, CopyEmail, Lightbox, ProjectList, Footer, home page
 public/images/  hero background, logo, project thumbnails
-public/resume/  PDF résumé
+public/resume/  PDF resume
 ```
 
 Adding or editing a project is a data change in `src/data/projects.ts`

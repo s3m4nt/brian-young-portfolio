@@ -29,7 +29,7 @@ describe("site data", () => {
     expect(layout).toMatch(/NEXT_PUBLIC_PROD_BUILD/);
   });
 
-  it("points at a résumé file that exists", () => {
+  it("points at a resume file that exists", () => {
     const file = join(
       __dirname,
       "../../public",
