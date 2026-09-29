@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import styles from "./Screensaver.module.css";
 
-const DEFAULT_IDLE_SECONDS = 45;
+const DEFAULT_IDLE_SECONDS = 10;
 const WAKE_EVENTS = ["mousemove", "keydown", "scroll", "wheel", "touchstart", "pointerdown"];
 const DISMISS_EVENTS = ["keydown", "pointerdown", "touchstart"];
 

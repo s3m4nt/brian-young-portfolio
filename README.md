@@ -116,7 +116,7 @@ That is the kind of detail I care about on production frontends: a small live da
 
 ## Idle screensaver
 
-Leave the page alone for 45 seconds and it turns into a screensaver: a black and white film of Chicago's Marina City towers fades in full screen, clouds moving behind them, and loops until you come back. Your name sits across the top in the site's yellow. Moving the mouse doesn't end it, so you can just watch; a click, tap, or key press sends it away.
+Leave the page alone for 10 seconds and it turns into a screensaver: a black and white film of Chicago's Marina City towers fades in full screen, clouds moving behind them, and loops until you come back. Your name sits across the top in the site's yellow. Moving the mouse doesn't end it, so you can just watch; a click, tap, or key press sends it away.
 
 How it works (`src/components/Screensaver.tsx`):
 
