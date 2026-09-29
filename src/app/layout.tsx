@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { IBM_Plex_Mono, Space_Grotesk } from "next/font/google";
+import { Screensaver } from "@/components/Screensaver";
 import { site } from "@/data/site";
 import "./globals.css";
 import { Analytics } from '@vercel/analytics/next';
@@ -44,6 +45,7 @@ export default function RootLayout({
     <html lang="en" className={`${display.variable} ${mono.variable}`}>
       <body data-prod-build={process.env.NEXT_PUBLIC_PROD_BUILD ?? "dev"}>
         {children}
+        <Screensaver />
         <Analytics />
       </body>
     </html>

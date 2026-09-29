@@ -2,6 +2,8 @@
 
 My portfolio site: a kinetic-type design built with Next.js (App Router), React, and TypeScript.
 
+The design is mine. This isn't a template or a theme. The concept, art direction, look and feel, typography, color, and motion all came from me, and every visual decision on the site was mine to make. Claude helped write the code to that direction, and I reviewed everything it produced.
+
 ## About this build
 
 I've been building production frontends for over ten years, and I could have hand-built this site. I chose not to, on purpose. I used it as a real project to find out what Claude can do when it's given actual design and engineering work, not a toy prompt.
@@ -12,7 +14,8 @@ The question I wanted to answer: **how far can an AI collaborator go on a real f
 
 **Mine: direction, taste, and content**
 
-- The creative direction: bold, artistic, kinetic type, and deliberately *not* the polished "AI-forward" look.
+- The creative direction and art direction: bold, artistic, kinetic type, and deliberately *not* the polished "AI-forward" look. The layout, type choices, the yellow and blue on near-black, and the overall feel are my design.
+- The hero image and the idle screensaver: I picked the building photo, came up with the screensaver idea, chose the Marina City footage, and art directed the overlay (placement, color, type sizes, wording).
 - All copy, project selection, and the facts: my roles, the stacks, the official spellings of technologies and project names.
 - Decisions on every trade-off: no links for sites that have since been redesigned, keeping the annotation tags "clunky" so they read as annotation and not design, and how the Men's Wearhouse / Jos. A. Bank work is presented.
 - Review. I caught the things that make a page look unprofessional (an off-center image, a broken mobile layout, tech tags that were identical in size and color to the descriptions) and sent them back.
@@ -111,6 +114,27 @@ WMO `weather_code` values map to a short icon set (clear, partly cloudy, overcas
 
 That is the kind of detail I care about on production frontends: a small live data path, explicit caching, and a defined empty state.
 
+## Idle screensaver
+
+Leave the page alone for 45 seconds and it turns into a screensaver: a black and white film of Chicago's Marina City towers fades in full screen, clouds moving behind them, and loops until you come back. Your name sits across the top in the site's yellow. Moving the mouse doesn't end it, so you can just watch; a click, tap, or key press sends it away.
+
+How it works (`src/components/Screensaver.tsx`):
+
+- One idle timer, reset by `mousemove`, `keydown`, `scroll`, `wheel`, `touchstart`, and `pointerdown` listeners (all passive, so scrolling is never blocked). Once it's showing, only `pointerdown`, `touchstart`, or `keydown` dismisses it.
+- It only turns on while the tab is visible (`visibilitychange`), and the video is paused whenever the screensaver is hidden.
+- The video is `preload="none"`, so visitors who never sit idle never download it. A poster frame covers the moment it takes to start.
+- WebM (VP9, about 1 MB) with an MP4 (H.264, about 1.7 MB) fallback, muted and `playsInline` so it can autoplay on phones too.
+- `prefers-reduced-motion` gets the still poster frame instead of the film.
+- The overlay is `aria-hidden` and only takes pointer events while it's showing, so the click that dismisses it never lands on a link underneath.
+
+The footage is a free Pexels clip, prepared with ffmpeg: converted to grayscale with a small contrast lift, then made into a seamless 9.5 second loop by crossfading its last two seconds into its first two, so there's no visible jump when it repeats.
+
+To see it without waiting, add `?idle=3` to the URL (for example `localhost:3000/?idle=3`).
+
+## Hero image
+
+The original building photo was only 1350px wide, and the 2700px versions made from it had blocky compression artifacts along the triangle edges. It was upscaled 2x with Real-ESRGAN (the `x2plus` model) to rebuild clean edges, then saved as WebP: `public/images/hero-2700-esrgan.webp`, 58 KB at 2700 x 1800.
+
 ## Analytics
 
 [Vercel Web Analytics](https://vercel.com/docs/analytics) is wired in the root layout (`@vercel/analytics/next`). Page views are first-party and privacy-friendly — no cookies, no Google tag. It only sends data on a production deploy; `next dev` is silent. Enable it on the Vercel project (Analytics → Enable) or the dashboard stays empty.
@@ -131,12 +155,13 @@ That is the kind of detail I care about on production frontends: a small live da
 ```
 src/
   app/          layout (next/font, metadata, Vercel Analytics), page, globals.css
-  components/   Hero, About, Work, ProjectList, Lightbox, Contact, CopyEmail, Footer
-                (CSS Modules; Lightbox, ProjectList and CopyEmail are client components.
+  components/   Hero, About, Work, ProjectList, Lightbox, Contact, CopyEmail, Footer, Screensaver
+                (CSS Modules; Lightbox, ProjectList, CopyEmail and Screensaver are client components.
                  Footer is an async Server Component: Open-Meteo weather after the copyright)
   data/         site.ts (name, email, links)  ·  projects.ts (the Selected work entries)
   __tests__/    Vitest specs: project/site data, CopyEmail, Lightbox, ProjectList, Footer, home page
 public/images/  hero background, logo, project thumbnails
+public/videos/  screensaver loop (WebM + MP4) and poster frame
 public/resume/  PDF resume
 ```
 
