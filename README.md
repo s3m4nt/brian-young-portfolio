@@ -1,5 +1,7 @@
 # Brian Young — Portfolio
 
+**Live:** [brianyoung.dev](https://brianyoung.dev)
+
 My portfolio site: a kinetic-type design built with Next.js (App Router), React, and TypeScript.
 
 The design is mine. This isn't a template or a theme. The concept, art direction, look and feel, typography, color, and motion all came from me, and every visual decision on the site was mine to make. Claude helped write the code to that direction, and I reviewed everything it produced.
