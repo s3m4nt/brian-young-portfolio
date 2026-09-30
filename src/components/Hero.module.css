@@ -44,6 +44,15 @@
   padding-bottom: 4px;
 }
 
+.mark {
+  appearance: none;
+  background: none;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  line-height: 0;
+}
+
 .mark img {
   width: clamp(89px, 11vw, 122px);
   height: auto;

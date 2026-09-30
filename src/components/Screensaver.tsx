@@ -6,6 +6,12 @@ import styles from "./Screensaver.module.css";
 const DEFAULT_IDLE_SECONDS = 10;
 const WAKE_EVENTS = ["mousemove", "keydown", "scroll", "wheel", "touchstart", "pointerdown"];
 const DISMISS_EVENTS = ["keydown", "pointerdown", "touchstart"];
+const ACTIVATE_EVENT = "screensaver:activate";
+
+/** Turn the screensaver on immediately. Safe to call from a click handler. */
+export function activateScreensaver() {
+  window.dispatchEvent(new Event(ACTIVATE_EVENT));
+}
 
 /**
  * Idle "screensaver": after a stretch of no input, a looping black-and-white
@@ -39,6 +45,12 @@ export function Screensaver() {
       arm();
     };
 
+    const activate = () => {
+      clearTimeout(timer);
+      active = true;
+      setOn(true);
+    };
+
     // While it's showing, only a deliberate click, tap or key press dismisses it,
     // so people can move the mouse and just watch.
     const onActivity = (e: Event) => {
@@ -47,12 +59,14 @@ export function Screensaver() {
     };
 
     WAKE_EVENTS.forEach((e) => window.addEventListener(e, onActivity, { passive: true }));
+    window.addEventListener(ACTIVATE_EVENT, activate);
     document.addEventListener("visibilitychange", dismiss);
     arm();
 
     return () => {
       clearTimeout(timer);
       WAKE_EVENTS.forEach((e) => window.removeEventListener(e, onActivity));
+      window.removeEventListener(ACTIVATE_EVENT, activate);
       document.removeEventListener("visibilitychange", dismiss);
     };
   }, []);

@@ -1,5 +1,8 @@
+"use client";
+
 import Image from "next/image";
 import { site } from "@/data/site";
+import { activateScreensaver } from "./Screensaver";
 import styles from "./Hero.module.css";
 
 export function Hero() {
@@ -16,15 +19,20 @@ export function Hero() {
       <div className={styles.overlay} aria-hidden="true" />
 
       <div className={styles.topbar}>
-        <div className={styles.mark}>
+        <button
+          type="button"
+          className={styles.mark}
+          onClick={activateScreensaver}
+          aria-label="Play screensaver"
+        >
           <Image
             src="/images/logo.png"
-            alt="Brian Young logo mark"
+            alt=""
             width={225}
             height={147}
             priority
           />
-        </div>
+        </button>
         <nav className={styles.elsewhere} aria-label="Elsewhere">
           <a href={site.links.github} target="_blank" rel="noopener noreferrer">GitHub</a>
           <a href={site.links.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn</a>
