@@ -18,9 +18,16 @@ describe("site data", () => {
     const layout = readFileSync(join(__dirname, "../app/layout.tsx"), "utf8");
     expect(layout).toMatch(/index:\s*false/);
     expect(layout).toMatch(/follow:\s*false/);
-    expect(robots()).toMatchObject({
-      rules: { userAgent: "*", disallow: "/" },
-    });
+    const rules = robots().rules;
+    const list = Array.isArray(rules) ? rules : [rules];
+    // Everyone else is blocked.
+    expect(list).toContainEqual({ userAgent: "*", disallow: "/" });
+    // Only link-preview bots may fetch the page, so shared links get a card.
+    const preview = list.find((r) => r.allow === "/");
+    expect(preview?.userAgent).toEqual(
+      expect.arrayContaining(["LinkedInBot", "Slackbot", "Twitterbot"]),
+    );
+    expect(preview?.userAgent).not.toContain("Googlebot");
   });
 
   it("stamps a production build time into the document", () => {
