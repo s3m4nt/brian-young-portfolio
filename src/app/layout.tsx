@@ -3,7 +3,7 @@ import { IBM_Plex_Mono, Space_Grotesk } from "next/font/google";
 import { Screensaver } from "@/components/Screensaver";
 import { site } from "@/data/site";
 import "./globals.css";
-import { Analytics } from '@vercel/analytics/next';
+import { SiteAnalytics } from "@/components/SiteAnalytics";
 
 const display = Space_Grotesk({
   subsets: ["latin"],
@@ -62,7 +62,7 @@ export default function RootLayout({
       <body data-prod-build={process.env.NEXT_PUBLIC_PROD_BUILD ?? "dev"}>
         {children}
         <Screensaver />
-        <Analytics />
+        <SiteAnalytics />
       </body>
     </html>
   );
