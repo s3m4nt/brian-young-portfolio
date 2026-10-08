@@ -181,3 +181,8 @@
     margin-top: 4px;
   }
 }
+
+.impact {
+  margin: 0.5rem 0 0;
+  max-width: 46ch;
+}

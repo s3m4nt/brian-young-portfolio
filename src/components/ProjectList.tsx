@@ -21,6 +21,7 @@ export function ProjectList({ projects }: { projects: Project[] }) {
                 <p className={styles.role}>{project.role}</p>
                 <h3 className={styles.title}>{project.title}</h3>
                 <p className={styles.sub}>{project.subtitle}</p>
+                {project.impact && <p className={styles.impact}>{project.impact}</p>}
                 {project.links && (
                   <div className={styles.links}>
                     {project.links.map((link) => (

@@ -20,12 +20,28 @@ const mono = IBM_Plex_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://brianyoung.dev"),
   title: site.title,
   description: site.description,
   openGraph: {
     title: site.title,
     description: site.description,
     type: "website",
+    url: "/",
+    images: [
+      {
+        url: "/images/og.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Brian Young, frontend developer",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: site.title,
+    description: site.description,
+    images: ["/images/og.jpg"],
   },
   // Unlisted on purpose: people get a link, search engines do not.
   robots: {

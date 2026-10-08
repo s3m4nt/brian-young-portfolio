@@ -50,13 +50,13 @@ export function About() {
           </p>
           <p>
             These days that means React and Next.js in production, alongside an
-            increasingly AI-augmented workflow — Cursor, agentic tooling, MCP
-            integrations — built to move fast without cutting corners on
+            increasingly AI-augmented workflow (Cursor, agentic tooling, MCP
+            integrations) built to move fast without cutting corners on
             accessibility, performance, or the version of a UI that actually
             ships.
           </p>
           <p>
-            That design instinct shows up beyond the code, too — logo and visual
+            That design instinct shows up beyond the code, too: logo and visual
             identity work, video editing, and translating Figma files into
             production myself rather than handing that off. It also means
             sitting across the table from product, marketing, and QA, not just

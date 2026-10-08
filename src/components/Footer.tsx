@@ -31,8 +31,6 @@ async function getWeather() {
 export async function Footer() {
   const weather = await getWeather();
 
-console.log("Malibu Temp:", weather);
-
   return (
     <footer className={styles.footer}>
       <span>
