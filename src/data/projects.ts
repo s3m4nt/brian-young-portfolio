@@ -30,7 +30,7 @@ export const projects: Project[] = [
     role: "Frontend development · Tailored Brands",
     subtitle: "Dynamic homepage campaigns · Men\u2019s Wearhouse & Jos. A. Bank",
     impact:
-      "About 156,000 homepage impressions a week across both brands. Site-wide promo and free-shipping messaging reaching up to 46,000 customers a day.",
+      "About 156,000 homepage views a week across both brands. The sale and free-shipping banners reached up to 46,000 shoppers a day.",
     tags: "React, Next.js, TypeScript, JavaScript, Node.js, SCSS, Pug templating & mixins, Design Tokens & Internal Design Systems",
     note: "Screenshots are from my time on the team. The live sites have since changed.",
     links: [

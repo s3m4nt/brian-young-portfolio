@@ -183,6 +183,8 @@
 }
 
 .impact {
-  margin: 0.5rem 0 0;
-  max-width: 46ch;
+  font-size: 12px;
+  color: var(--paper-dim);
+  margin-top: 8px;
+  max-width: 52ch;
 }
