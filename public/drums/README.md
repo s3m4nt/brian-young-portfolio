@@ -10,7 +10,7 @@ A setup reference for backline technicians reproducing Brian Young’s drum kit.
 - Choose 3D overview, Overhead, Drummer, Front, or Side. Reset restores the overview and zoom.
 - Tap an instrument label or choose it in Instrument details. Measurements follow that selection.
 - Enable All instruments for a whole-kit comparison.
-- Heights, Spacing, Cymbals, Labels, and the 6″ grid can be toggled independently.
+- Heights, Spacing, Cymbals, Labels, and the 6″ floor grid tiles can be toggled independently.
 - Expand How to use this map for the technician workflow, or View all measurements as data for tables.
 - Open a reference photo to enlarge it; close it with the Close image button or Escape.
 - Print setup reference expands both guides and the measurement tables before opening the browser print dialog. The current camera view and measurement toggles determine the printed canvas.
