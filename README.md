@@ -139,6 +139,8 @@ To see it without waiting, add `?idle=3` to the URL (for example `localhost:3000
 
 It's plain HTML, CSS and JavaScript on a canvas, with no dependencies and no build step. It lives in `public/drums` and is served as-is through a rewrite in `next.config.mjs`, separate from the Next.js app.
 
+See [the drum atlas usage and maintenance guide](public/drums/README.md) for controls, measurement definitions, the technician workflow, and deployment instructions. The page also has a collapsed “How to use this map” guide.
+
 ## Hero image
 
 The original building photo was only 1350px wide, and the 2700px versions made from it had blocky compression artifacts along the triangle edges. It was upscaled 2x with Real-ESRGAN (the `x2plus` model) to rebuild clean edges, then saved as WebP: `public/images/hero-2700-esrgan.webp`, 58 KB at 2700 x 1800.
