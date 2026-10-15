@@ -15,6 +15,8 @@ A setup reference for backline technicians reproducing Brian Young’s drum kit.
 - Open a reference photo to enlarge it; close it with the Close image button or Escape.
 - Print setup reference expands both guides and the measurement tables before opening the browser print dialog. The current camera view and measurement toggles determine the printed canvas.
 
+Use **Units** to switch all playing heights and horizontal spacing between inches and centimeters. Values use the exact conversion 1 inch = 2.54 cm and metric display rounds to 0.1 cm; this does not imply improved measurement accuracy. Drum/cymbal sizes stay in standard inches. The grid spacing is the same physical distance in either mode. Print uses the selected unit.
+
 ## Read the measurements
 
 - **Cyan:** vertical floor-to-edge or floor-to-hoop height. Drum references are the top of the batter-side hoop, not head-center heights. Cymbal references are opposing near/far edges.
