@@ -133,6 +133,12 @@ The footage is a free Pexels clip, prepared with ffmpeg: converted to grayscale 
 
 To see it without waiting, add `?idle=3` to the URL (for example `localhost:3000/?idle=3`).
 
+## Drum setup atlas
+
+`/drums` is a page that isn't linked from the site. It's a setup reference for backline techs, so they can set up my kit (Ludwig Classic, Black Beauty snare, Paiste Giant Beat cymbals) the way I play it. It has measured playing heights, center-to-center spacing, an orbitable 3D view of the kit, and photos of the final setup.
+
+It's plain HTML, CSS and JavaScript on a canvas, with no dependencies and no build step. It lives in `public/drums` and is served as-is through a rewrite in `next.config.mjs`, separate from the Next.js app.
+
 ## Hero image
 
 The original building photo was only 1350px wide, and the 2700px versions made from it had blocky compression artifacts along the triangle edges. It was upscaled 2x with Real-ESRGAN (the `x2plus` model) to rebuild clean edges, then saved as WebP: `public/images/hero-2700-esrgan.webp`, 58 KB at 2700 x 1800.
@@ -165,6 +171,7 @@ src/
 public/images/  hero background, logo, project thumbnails
 public/videos/  screensaver loop (WebM + MP4) and poster frame
 public/resume/  PDF resume
+public/drums/   drum setup atlas (standalone vanilla JS page, served at /drums)
 ```
 
 Adding or editing a project is a data change in `src/data/projects.ts`

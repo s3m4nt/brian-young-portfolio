@@ -20,6 +20,11 @@ const nextConfig = {
     // Next 16 defaults this allowlist to [75] and will error otherwise.
     qualities: [75, 80, 90],
   },
+  // Hidden page: the drum setup atlas is a static app in public/drums.
+  // Not linked anywhere on the site; shared by URL only.
+  async rewrites() {
+    return [{ source: "/drums", destination: "/drums/index.html" }];
+  },
 };
 
 export default nextConfig;
