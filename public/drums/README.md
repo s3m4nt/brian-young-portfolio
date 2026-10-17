@@ -74,3 +74,18 @@ Open http://localhost:3000/drums. To test the production build, run `npm run bui
 6. Verify the deployment completes, then check https://brianyoung.dev/drums. Refresh an existing tab to load the updated code.
 
 The separate ChatGPT-hosted atlas is a different deployment. Publishing the portfolio does not automatically update it.
+
+## Personal drum tunings
+
+The collapsed **Drum tunings** section uses Brian Young’s published artist settings at https://tune-bot.com/artists/ (checked October 17, 2026). These are lug frequencies, not whole-drum fundamental pitches. Instructions: https://tune-bot.com/instructions/.
+
+| Drum | Batter / top lug pitch | Resonant / bottom lug pitch | Use |
+| --- | --- | --- | --- |
+| 14″ snare | 261 Hz | 349 Hz | Mapped kit |
+| 13″ rack tom | Not yet specified | Not yet specified | No published 13″ setting |
+| 16″ floor tom | 110 Hz | 116 Hz | Mapped kit |
+| 22″ bass | 73 Hz | 82 Hz | Mapped kit |
+| 12″ tom | 196 Hz | 207 Hz | Additional published reference |
+| 18″ tom | 82 Hz | 87 Hz | Additional published reference |
+
+Do not silently substitute the published 12″ values for the mapped 13″ rack tom. Brian can supply its targets separately. On the kick, batter/top means pedal-side and resonant/bottom means front/audience-side. Tuning values remain in Hz regardless of the measurement-unit selector. This section is static HTML and is included when Print setup reference expands all details.
