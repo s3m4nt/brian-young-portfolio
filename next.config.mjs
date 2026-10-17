@@ -13,6 +13,8 @@ const nextConfig = {
   env: {
     // Frozen when `next build` runs. `next dev` stays "dev".
     NEXT_PUBLIC_PROD_BUILD: prodBuildStamp(),
+    // Short git commit of the deploy (Vercel sets VERCEL_GIT_COMMIT_SHA). Local builds say "dev".
+    NEXT_PUBLIC_COMMIT: (process.env.VERCEL_GIT_COMMIT_SHA || "").slice(0, 7) || "dev",
   },
   images: {
     formats: ["image/avif", "image/webp"],

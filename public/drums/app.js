@@ -74,3 +74,4 @@ cv.addEventListener('touchmove',e=>{if(e.touches.length>=2){e.preventDefault();l
 cv.addEventListener('touchend',e=>{if(e.touches.length<2){tMid=null;tDist=0}if(e.touches.length)return;let t=e.changedTouches[0];if(!tTwo&&tStart&&Math.hypot(t.clientX-tStart[0],t.clientY-tStart[1])<10&&Date.now()-tStart[2]<400){let rect=cv.getBoundingClientRect(),x=t.clientX-rect.left,y=t.clientY-rect.top;let hit=hits.findLast(a=>x>=a.x&&x<=a.x+a.w&&y>=a.y&&y<=a.y+a.h);if(hit)select(hit.id)}tStart=null;tTwo=false});
 cv.addEventListener('touchcancel',()=>{tMid=null;tDist=0;tStart=null;tTwo=false});
 select('snare');
+fetch('/api/version').then(r=>r.ok?r.json():null).then(v=>{if(v&&v.commit)$('build').textContent=' · build '+v.commit+(v.build&&v.build!=='dev'?' ('+v.build+')':'')}).catch(()=>{});
