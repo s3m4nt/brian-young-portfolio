@@ -42,7 +42,7 @@ Heights and sizes were supplied by Brian. Horizontal distances were estimated fr
 
 Near/far cymbal heights capture one tilt component. Sideways tilt and exact tilt direction were not fully measured; use the reference photos. Drum lateral tilt is treated as level per Brian’s instruction. Earlier highest-hoop readings differed from subsequent near/far readings; the later near/far values govern the model. The snare’s earlier 25¾″ highest-hoop reading remains documented for review.
 
-The bass drum is **22″ diameter × 14″ depth**. Other drums are 13″ × 9″ rack tom, 16″ × 16″ floor tom, and 14″ × 6½″ Black Beauty snare. Paiste Giant Beat cymbals are 15″ hi-hats, 19″ left, 24″ center-right ride, and 20″ far right.
+The bass drum is **22″ diameter × 14″ depth**. Other drums are 13″ × 9″ rack tom, 16″ × 16″ floor tom, and 14″ × 6½″ Black Beauty snare. Paiste Giant Beat cymbals are 15″ hi-hats, 19″ left crash, 24″ center-right ride, and 20″ far right crash.
 
 ## Source and local preview
 
