@@ -11,9 +11,9 @@ A setup reference for backline technicians reproducing Brian Young’s drum kit.
 - Tap an instrument label or choose it in Instrument details. Measurements follow that selection.
 - Enable All instruments for a whole-kit comparison.
 - Heights, Spacing, Cymbals, Labels, and the 6″ floor grid tiles can be toggled independently.
-- Expand How to use this map for the technician workflow, or View all measurements as data for tables.
+- Expand How to use this map for the technician workflow, View all measurements as data for tables, or Drum tunings for head pitches.
 - Open a reference photo to enlarge it; close it with the Close image button or Escape.
-- Print setup reference expands both guides and the measurement tables before opening the browser print dialog. The current camera view and measurement toggles determine the printed canvas.
+- Print setup reference expands all three sections and the measurement tables before opening the browser print dialog. The current camera view and measurement toggles determine the printed canvas.
 
 Use **Units** to switch all playing heights and horizontal spacing between inches and centimeters. Values use the exact conversion 1 inch = 2.54 cm and metric display rounds to 0.1 cm; this does not imply improved measurement accuracy. Drum/cymbal sizes stay in standard inches. The grid spacing is the same physical distance in either mode. Print uses the selected unit.
 
@@ -23,9 +23,8 @@ Use **Units** to switch all playing heights and horizontal spacing between inche
 - **Yellow:** approximate horizontal center-to-center distance. These are overhead spacing estimates, not diagonal distances between differently elevated surfaces.
 - **White crosshairs:** instrument reference centers. Dashed white lines connect them to a common horizontal yellow measurement plane. The bass drum reference is the top midpoint of its batter-side hoop, not the center of the vertical head.
 - **Numeric badges:** drawn last, on opaque black backgrounds, above geometry, lines, markers, and instrument labels.
-- **Near / far / left / right:** always from the drummer’s seated perspective.
 - **Hi-hats:** level, with the bottom cymbal edge at 32¾″ and open top cymbal edge at 34″. These are separate cymbal heights, not a tilt measurement.
-- **Throne:** 21″ from the floor to the compressed seat surface, with the drummer seated. Brian sets the throne position.
+- **Throne:** 21″ from the floor to the compressed seat surface, with the drummer seated.
 
 Height lines collapse when viewed directly overhead; use Side or 3D overview to see them.
 
@@ -77,15 +76,31 @@ The separate ChatGPT-hosted atlas is a different deployment. Publishing the port
 
 ## Personal drum tunings
 
-The collapsed **Drum tunings** section uses Brian Young’s published artist settings at https://tune-bot.com/artists/ (checked October 17, 2026). These are lug frequencies, not whole-drum fundamental pitches. Instructions: https://tune-bot.com/instructions/.
+The collapsed **Drum tunings** section (last of the three pulldowns) lists lug frequencies, not whole-drum fundamental pitches. Each cell shows Hz and the note name, with the note in bold. Base values come from Brian Young’s artist settings at https://tune-bot.com/artists/ (checked October 17, 2026). Instructions: https://tune-bot.com/instructions/.
 
-| Drum | Batter / top lug pitch | Resonant / bottom lug pitch | Use |
-| --- | --- | --- | --- |
-| 14″ snare | 261 Hz | 349 Hz | Mapped kit |
-| 13″ rack tom | Not yet specified | Not yet specified | No published 13″ setting |
-| 16″ floor tom | 110 Hz | 116 Hz | Mapped kit |
-| 22″ bass | 73 Hz | 82 Hz | Mapped kit |
-| 12″ tom | 196 Hz | 207 Hz | Additional published reference |
-| 18″ tom | 82 Hz | 87 Hz | Additional published reference |
+### Mapped kit
 
-Do not silently substitute the published 12″ values for the mapped 13″ rack tom. Brian can supply its targets separately. On the kick, batter/top means pedal-side and resonant/bottom means front/audience-side. Tuning values remain in Hz regardless of the measurement-unit selector. This section is static HTML and is included when Print setup reference expands all details.
+| Drum | Batter / top | Resonant / bottom |
+| --- | --- | --- |
+| 14″ snare, Generic | 261 Hz / C4 | 349 Hz / F4 |
+| 14″ snare, Medium | 294 Hz / D4 | 392 Hz / G4 |
+| 14″ snare, Low | 261 Hz / C4 | 349 Hz / F4 (placeholder, copied from Generic) |
+| 13″ rack tom | 196 Hz / G3 | 207 Hz / A♭3 |
+| 16″ floor tom | 110 Hz / A2 | 116 Hz / B♭2 |
+| 22″ bass drum | 73 Hz / D2 | 82 Hz / E2 |
+
+### Reference: Manchester UK, June 27, 2017
+
+From Brian’s tuning note at the time, kept for comparison.
+
+| Drum | Batter / top | Resonant / bottom |
+| --- | --- | --- |
+| Kick | 73 Hz / D2 | 83 Hz / E2 |
+| Snare | 262 Hz / C4 | 393 Hz / G4 |
+| T1 | 175 Hz / F3 | 185 Hz / F♯3 |
+| T2 | 124 Hz / B2 | 131 Hz / C3 |
+| T3 | 82 Hz / F | 82 Hz / F |
+
+T3 is written as the original note had it; 82 Hz is closer to E2, so confirm it at the kit.
+
+On the kick, batter/top means pedal-side and resonant/bottom means front/audience-side. This section is static HTML and is included when Print setup reference expands all details.
