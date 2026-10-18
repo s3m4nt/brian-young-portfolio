@@ -93,7 +93,7 @@ Current tom settings adopt Tommy Rickard’s published Tune-Bot lug frequencies,
 
 Previous personal test readings (October 17, retained as history): 13″ rack batter 236 Hz / resonant 233 Hz; 16″ floor batter 186 Hz / resonant 135 Hz. These are not the current targets.
 
-### Reference: Manchester UK, June 27, 2017
+### Reference: Blueprint Studios, Manchester UK, June 27, 2017
 
 From Brian’s tuning note at the time, kept for comparison.
 
