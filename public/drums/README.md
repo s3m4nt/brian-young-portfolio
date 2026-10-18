@@ -84,10 +84,14 @@ The collapsed **Drum tunings** section (last of the three pulldowns) lists lug f
 | --- | --- | --- |
 | 14″ snare, Generic | 261 Hz / C4 | 349 Hz / F4 |
 | 14″ snare, Medium | 294 Hz / D4 | 392 Hz / G4 |
-| 14″ snare, Low | 261 Hz / C4 | 349 Hz / F4 (placeholder, copied from Generic) |
-| 13″ rack tom | 196 Hz / G3 | 207 Hz / A♭3 |
-| 16″ floor tom | 110 Hz / A2 | 116 Hz / B♭2 |
+| 14″ snare, Low | 233 Hz / A♯3 | 330 Hz / E4 |
+| 13″ rack tom | 186 Hz / F♯3 | 206 Hz / G♯3 |
+| 16″ floor tom | 108 Hz / A2 | 115 Hz / A♯2 |
 | 22″ bass drum | 73 Hz / D2 | 82 Hz / E2 |
+
+Current tom settings adopt Tommy Rickard’s published Tune-Bot lug frequencies, selected by Brian on October 17, 2026. Low snare is Brian’s own A♯3 / E4 setting. Note names are nearest equivalents; use Hz as the targets. Generic and Medium snare settings and historical reference tables are unchanged.
+
+Previous personal test readings (October 17, retained as history): 13″ rack batter 236 Hz / resonant 233 Hz; 16″ floor batter 186 Hz / resonant 135 Hz. These are not the current targets.
 
 ### Reference: Manchester UK, June 27, 2017
 
