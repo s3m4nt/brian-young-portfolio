@@ -108,3 +108,7 @@ From Brian’s tuning note at the time, kept for comparison.
 T3 is written as the original note had it; 82 Hz is closer to E2, so confirm it at the kit.
 
 On the kick, batter/top means pedal-side and resonant/bottom means front/audience-side. This section is static HTML and is included when Print setup reference expands all details.
+
+## Tuning view
+
+Enable **Tuning view** above the canvas for a drums-only pitch reference. It disables and unchecks Cymbals, Labels, grid, Heights, Spacing, and All instruments, removes illustrative hardware, and starts overhead. Each drum gets a high-contrast Batter / Resonant card with Hz and notes, sourced directly from the current tuning table. Snare tuning offers Generic, Medium, and Low (default Low). The other cameras, zoom, pan, and print still work. Turning the mode off restores the previous visibility choices and camera. Tuning cards can be tapped to select a drum. Notes remain nearest equivalents to the stated lug frequencies.
