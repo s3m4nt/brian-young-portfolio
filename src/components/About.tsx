@@ -43,8 +43,8 @@ export function About() {
           </h2>
           <p>
             Same instinct for timing and detail, aimed at a different medium.
-            That crossover led to a Seattle startup, then freelance design and
-            development, then six years building enterprise e-commerce
+            That crossover led to a Seattle startup, then my own design and
+            development studio, Battersea Creative, then six years building enterprise e-commerce
             experiences at Tailored Brands for Men&#x2019;s Wearhouse and Jos. A.
             Bank.
           </p>
